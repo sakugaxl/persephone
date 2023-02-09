@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
-import { logo } from './assets';
-import { Home, TaskTracker, TaskBoard, ALICE } from './pages';
-import { Navbar } from './components'
+import { logo } from "./assets";
+import { Home, TaskTracker, TaskBoard, ALICE } from "./pages";
+import { Navbar } from "./components";
 
 const App = () => {
   return (
@@ -13,11 +13,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/task-tracker" element={<TaskTracker />} />
           <Route path="/task-board" element={<TaskBoard />} />
-          <Route path="/alice" element={<ALICE />} />
+          <Route path="/alice" element={<ALICE apiKey={process.env.REACT_APP_API_KEY} />} />
         </Routes>
       </main>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

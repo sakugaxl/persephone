@@ -4,44 +4,45 @@ import axios from "axios";
 import Howler from "howler";
 import Navbar from "../components/Navbar";
 
-const ALICE = () => {
+const ALICE = (props) => {
   const [text, setText] = useState("");
-  const [response, setResponse] = useState(null);
+  const [response, setResponse] = useState("");
 
-  const handleChange = (e) => {
-    setText(e.target.value);
+  const handleChange = (event) => {
+    setText(event.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("https://api.openai.com/v1/engines/text-davinci-002/jobs", {
-        prompt: text,
-      })
-      .then((res) => {
-        setResponse(res.data.choices[0].text);
-      });
-  };
-
-  useEffect(() => {
-    if (response) {
-      axios
-        .get(`https://api.openai.com/v1/images/generations`, {
-          responseType: "arraybuffer",
-        })
-        .then((res) => {
-          const url = URL.createObjectURL(new Blob([res.data]));
-          const sound = new Howler.Howl({ src: [url] });
-          sound.play();
-        });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const API_KEY = props.apiKey;
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${API_KEY}`,
+        },
+      };
+      const response = await axios.post(
+        "https://api.openai.com/v1/engines/text-davinci/completions",
+        {
+          prompt: text,
+          max_tokens: 100,
+          temperature: 0.7,
+        },
+        config
+      );
+      setResponse(response.data.choices[0].text);
+    } catch (error) {
+      console.error(error);
+      setResponse("Error generating response. Please try again later.");
     }
-  }, [response]);
+  };
 
   return (
     <div>
       <Navbar />
       {response && (
-        <div>
+        <div className="bg-gray-200 rounded-lg p-3 shadow-md">
           <p>{response}</p>
         </div>
       )}
@@ -51,8 +52,9 @@ const ALICE = () => {
           value={text}
           onChange={handleChange}
           placeholder="Ask ALICE"
+          className="border border-gray-400 rounded-lg p-3 shadow-md"
         />
-        <button type="submit" style={{ backgroundColor: "blue" }}>
+        <button type="submit" className="bg-blue-500 text-white rounded-lg p-3">
           Submit
         </button>
       </form>

@@ -13,7 +13,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 router.route('/').get((req, res) => {
-    res.send('Hello from Midjourney!');
+    res.send('Hello from Persephone!');
 })
 
 router.route('/').post(async (req, res) => {
@@ -23,7 +23,7 @@ router.route('/').post(async (req, res) => {
         const aiResponse = await openai.createImage({
             prompt,
             n: 1,
-            size: '1024x1024',
+            size: '2048x2048',
             response_format: 'b64_json',
         })
 
