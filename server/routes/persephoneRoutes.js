@@ -20,16 +20,16 @@ router.route('/').post(async (req, res) => {
     try {
         const { prompt } = req.body;
 
-        const aiResponse = await openai.createImage({
+        const aiResponse = await openai.createCompletion({
             prompt,
+            max_tokens: 50,
             n: 1,
-            size: '2048x2048',
-            response_format: 'b64_json',
+            temperature: 0.5,
         })
 
-        const image = aiResponse.data.data[0].b64_json;
+        const text = aiResponse.data.choices[0].text;
 
-        res.status(200).json({ photo: image });
+        res.status(200).json({ text });
     } catch (error) {
         console.log(error);
         res.status(500).send(error?.response.data.error.message)
