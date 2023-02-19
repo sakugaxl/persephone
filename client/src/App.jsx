@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import { logo } from "./assets";
-import { Home, TaskTracker, TaskBoard, ALICE, Profile, Login } from "./pages";
+import { Home, TaskTracker, TaskBoard, ALICE, Profile, Login, HabitTracker } from "./pages";
 import { Navbar } from "./components";
 
 const App = () => {
@@ -12,6 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/task-tracker" element={<TaskTracker />} />
+          <Route path="/habit-tracker" element={<HabitTracker />} />
           <Route path="/task-board" element={<TaskBoard />} />
           <Route path="/alice" element={<ALICE />} />
           <Route path="/login" element={<Login />} />

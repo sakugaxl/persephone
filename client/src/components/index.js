@@ -14,6 +14,9 @@ import CustomButton from "./CustomButton";
 import Rewards from "./Rewards";
 import Tasks from "./Tasks";
 import Navbar from "./Navbar";
+import HabitPage from "./HabitPage";
+import HabitForm from "./HabitForm";
+import HabitList from "./HabitList";
 
 
 
@@ -34,4 +37,7 @@ export {
     Rewards,
     Tasks,
     Navbar,
+    HabitPage,
+    HabitForm,
+    HabitList,
 }

@@ -4,6 +4,7 @@ import TaskBoard from './TaskBoard';
 import ALICE from './ALICE';
 import Profile from './Profile';
 import Login from './Login';
+import HabitTracker from './HabitTracker';
 
 export {
     Home,
@@ -12,4 +13,5 @@ export {
     ALICE,
     Profile,
     Login,
+    HabitTracker,
 }
