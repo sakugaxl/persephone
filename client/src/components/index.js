@@ -17,7 +17,10 @@ import Navbar from "./Navbar";
 import HabitPage from "./HabitPage";
 import HabitForm from "./HabitForm";
 import HabitList from "./HabitList";
-
+import HoverCarouselOne from "./HoverCarouselOne";
+import HabitCard from "./HabitCard";
+import UserProfileForm from "./UserProfileForm";
+import NotificationSettingsForm from "./NotificationSettingsForm";
 
 
 export {
@@ -40,4 +43,8 @@ export {
     HabitPage,
     HabitForm,
     HabitList,
+    HoverCarouselOne,
+    HabitCard,
+    UserProfileForm,
+    NotificationSettingsForm,
 }

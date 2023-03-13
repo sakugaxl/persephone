@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
 import { logo } from "./assets";
-import { Home, TaskTracker, TaskBoard, ALICE, Profile, Login, HabitTracker } from "./pages";
+import { Home, TaskTracker, TaskBoard, ALICE, Profile, Login, HabitTracker, Dashboard } from "./pages";
 import { Navbar } from "./components";
 
 const App = () => {
@@ -17,6 +17,7 @@ const App = () => {
           <Route path="/alice" element={<ALICE />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </main>
     </BrowserRouter>

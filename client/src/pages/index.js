@@ -5,6 +5,7 @@ import ALICE from './ALICE';
 import Profile from './Profile';
 import Login from './Login';
 import HabitTracker from './HabitTracker';
+import Dashboard from './Dashboard';
 
 export {
     Home,
@@ -14,4 +15,5 @@ export {
     Profile,
     Login,
     HabitTracker,
+    Dashboard,
 }

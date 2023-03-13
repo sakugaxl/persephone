@@ -15,10 +15,10 @@ const Navbar = () => {
           <Link to="/task-board" className="font-inter font-medium bg-blue-600 text-white px-8 py-4 rounded-md">Task Board</Link>
         </li>
         <li>
-          <Link to="/task-tracker" className="font-inter font-medium bg-blue-600 text-white px-8 py-4 rounded-md">Task Tracker</Link>
+          <Link to="/planner" className="font-inter font-medium bg-blue-600 text-white px-8 py-4 rounded-md">Planner</Link>
         </li>
         <li>
-          <Link to="/settings" className="font-inter font-medium bg-blue-600 text-white px-8 py-4 rounded-md">Settings</Link>
+          <Link to="/habit-tracker" className="font-inter font-medium bg-blue-600 text-white px-8 py-4 rounded-md">Habits</Link>
         </li>
         <li>
           <Link to="/alice" className="font-inter font-medium bg-blue-600 text-white px-8 py-4 rounded-md">A.L.I.C.E</Link>
